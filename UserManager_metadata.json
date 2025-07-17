@@ -1,0 +1,250 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"inputs": [],
+				"name": "InvalidUsername",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "NoInterestsProvided",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "UserAlreadyRegistered",
+				"type": "error"
+			},
+			{
+				"inputs": [],
+				"name": "UserNotRegistered",
+				"type": "error"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string[]",
+						"name": "newInterests",
+						"type": "string[]"
+					}
+				],
+				"name": "InterestsUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "username",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string[]",
+						"name": "interests",
+						"type": "string[]"
+					}
+				],
+				"name": "UserRegistered",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_user",
+						"type": "address"
+					}
+				],
+				"name": "getUserDetails",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "username",
+						"type": "string"
+					},
+					{
+						"internalType": "string[]",
+						"name": "interests",
+						"type": "string[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_user",
+						"type": "address"
+					}
+				],
+				"name": "isUserRegistered",
+				"outputs": [
+					{
+						"internalType": "bool",
+						"name": "",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_username",
+						"type": "string"
+					},
+					{
+						"internalType": "string[]",
+						"name": "_interests",
+						"type": "string[]"
+					}
+				],
+				"name": "registerUser",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string[]",
+						"name": "_newInterests",
+						"type": "string[]"
+					}
+				],
+				"name": "updateInterests",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"author": "Your Name",
+			"details": "Uses mappings, events, and gas-efficient error handling.",
+			"errors": {
+				"UserAlreadyRegistered()": [
+					{
+						"details": "Custom error for better gas optimization"
+					}
+				]
+			},
+			"kind": "dev",
+			"methods": {
+				"getUserDetails(address)": {
+					"params": {
+						"_user": "Address of the user to fetch details for"
+					},
+					"returns": {
+						"interests": "The list of interests stored by the user",
+						"username": "The username of the user"
+					}
+				},
+				"isUserRegistered(address)": {
+					"params": {
+						"_user": "Address of the user to check"
+					},
+					"returns": {
+						"_0": "isRegistered True if the user is registered, otherwise false"
+					}
+				},
+				"registerUser(string,string[])": {
+					"params": {
+						"_interests": "An array of interests the user wants to store",
+						"_username": "The desired username of the user"
+					}
+				},
+				"updateInterests(string[])": {
+					"params": {
+						"_newInterests": "The new set of interests the user wants to store"
+					}
+				}
+			},
+			"stateVariables": {
+				"users": {
+					"details": "Mapping of user addresses to their profile information"
+				}
+			},
+			"title": "UserManager - Manages user registration and interests in a decentralized social media platform.",
+			"version": 1
+		},
+		"userdoc": {
+			"events": {
+				"InterestsUpdated(address,string[])": {
+					"notice": "Event emitted when a user updates their interests"
+				},
+				"UserRegistered(address,string,string[])": {
+					"notice": "Event emitted when a user successfully registers"
+				}
+			},
+			"kind": "user",
+			"methods": {
+				"getUserDetails(address)": {
+					"notice": "Fetches user details (public view function)"
+				},
+				"isUserRegistered(address)": {
+					"notice": "Checks if a user is registered"
+				},
+				"registerUser(string,string[])": {
+					"notice": "Allows a new user to register with a username and interests"
+				},
+				"updateInterests(string[])": {
+					"notice": "Allows an already registered user to update their interests"
+				}
+			},
+			"notice": "This contract allows users to register and store their interests for AI-based content recommendations.",
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"FINAL_YEAR_PROJECT_WORK/UserRegistration.sol": "UserManager"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"FINAL_YEAR_PROJECT_WORK/UserRegistration.sol": {
+			"keccak256": "0x22f63f178cc84202d9a5e52c26a6290119a7ab90cfc5137d2b8f6f067e096529",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://3bbc9e9d94df5adba6e6c7d52e661012e00924cc0111831f050b8de5afda12de",
+				"dweb:/ipfs/QmccTcBJusTDK7nxmqCzptJvz29b2GM9G2pvzFh7dLXJ1M"
+			]
+		}
+	},
+	"version": 1
+}

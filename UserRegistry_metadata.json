@@ -1,0 +1,311 @@
+{
+	"compiler": {
+		"version": "0.8.26+commit.8a97fa7a"
+	},
+	"language": "Solidity",
+	"output": {
+		"abi": [
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string[]",
+						"name": "newInterests",
+						"type": "string[]"
+					}
+				],
+				"name": "InterestsUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "username",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "bio",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "profilePic",
+						"type": "string"
+					}
+				],
+				"name": "ProfileUpdated",
+				"type": "event"
+			},
+			{
+				"anonymous": false,
+				"inputs": [
+					{
+						"indexed": true,
+						"internalType": "address",
+						"name": "user",
+						"type": "address"
+					},
+					{
+						"indexed": false,
+						"internalType": "string",
+						"name": "username",
+						"type": "string"
+					},
+					{
+						"indexed": false,
+						"internalType": "string[]",
+						"name": "interests",
+						"type": "string[]"
+					}
+				],
+				"name": "UserRegistered",
+				"type": "event"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "uint256",
+						"name": "",
+						"type": "uint256"
+					}
+				],
+				"name": "allUsers",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [],
+				"name": "getAllUsers",
+				"outputs": [
+					{
+						"internalType": "address[]",
+						"name": "",
+						"type": "address[]"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "_userAddress",
+						"type": "address"
+					}
+				],
+				"name": "getUser",
+				"outputs": [
+					{
+						"internalType": "string",
+						"name": "username",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "bio",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "profilePic",
+						"type": "string"
+					},
+					{
+						"internalType": "string[]",
+						"name": "interests",
+						"type": "string[]"
+					},
+					{
+						"internalType": "bool",
+						"name": "isRegistered",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_username",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_bio",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_profilePic",
+						"type": "string"
+					},
+					{
+						"internalType": "string[]",
+						"name": "_interests",
+						"type": "string[]"
+					}
+				],
+				"name": "registerUser",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string[]",
+						"name": "_newInterests",
+						"type": "string[]"
+					}
+				],
+				"name": "updateInterests",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "string",
+						"name": "_username",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_bio",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "_profilePic",
+						"type": "string"
+					}
+				],
+				"name": "updateProfile",
+				"outputs": [],
+				"stateMutability": "nonpayable",
+				"type": "function"
+			},
+			{
+				"inputs": [
+					{
+						"internalType": "address",
+						"name": "",
+						"type": "address"
+					}
+				],
+				"name": "users",
+				"outputs": [
+					{
+						"internalType": "address",
+						"name": "userAddress",
+						"type": "address"
+					},
+					{
+						"internalType": "string",
+						"name": "username",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "bio",
+						"type": "string"
+					},
+					{
+						"internalType": "string",
+						"name": "profilePic",
+						"type": "string"
+					},
+					{
+						"internalType": "bool",
+						"name": "isRegistered",
+						"type": "bool"
+					}
+				],
+				"stateMutability": "view",
+				"type": "function"
+			}
+		],
+		"devdoc": {
+			"kind": "dev",
+			"methods": {},
+			"version": 1
+		},
+		"userdoc": {
+			"kind": "user",
+			"methods": {
+				"getAllUsers()": {
+					"notice": "Get all registered users"
+				},
+				"getUser(address)": {
+					"notice": "Get a user's profile"
+				},
+				"registerUser(string,string,string,string[])": {
+					"notice": "Register a new user"
+				},
+				"updateInterests(string[])": {
+					"notice": "Update user interests"
+				},
+				"updateProfile(string,string,string)": {
+					"notice": "Update profile information"
+				}
+			},
+			"version": 1
+		}
+	},
+	"settings": {
+		"compilationTarget": {
+			"FINAL_YEAR_PROJECT_WORK/UserRegistration.sol": "UserRegistry"
+		},
+		"evmVersion": "cancun",
+		"libraries": {},
+		"metadata": {
+			"bytecodeHash": "ipfs"
+		},
+		"optimizer": {
+			"enabled": false,
+			"runs": 200
+		},
+		"remappings": []
+	},
+	"sources": {
+		"FINAL_YEAR_PROJECT_WORK/UserRegistration.sol": {
+			"keccak256": "0x843603cc7361045cdacad8f58c83d7fc01707e891a0c04ad515efcc9bcfcc036",
+			"license": "MIT",
+			"urls": [
+				"bzz-raw://c8ee55476a5efccae6961c8835974ca41d56213f27676ef99a40a80344e50133",
+				"dweb:/ipfs/QmXKU4aheBrEXZ4wKAdNLXtX6k4nQWqk8dBXKcMsnyLSXC"
+			]
+		}
+	},
+	"version": 1
+}
